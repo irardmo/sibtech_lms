@@ -60,6 +60,10 @@ const displayGeneratedSchedules = () => {
             <td>${schedule.course}</td>
             <td>${schedule.lec || ''}</td>
             <td>${schedule.lab || ''}</td>
+            <td>
+                <button class="btn btn-primary btn-sm" onclick="editSchedule(${schedule.id})">Edit</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteSchedule(${schedule.id})">Delete</button>
+            </td>
         `;
         generatedScheduleTableBody.appendChild(row);
     });
@@ -394,8 +398,11 @@ function addCourse() {
     div.innerHTML = `
         <div class="form-group row">
             <label class="col-sm-3 col-form-label">Course Name</label>
-            <div class="col-sm-9">
+            <div class="col-sm-8">
                 <input type="text" class="form-control" name="course_names[]" placeholder="Course Name" required />
+            </div>
+            <div class="col-sm-1">
+                <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.parentElement.parentElement.remove()">Remove</button>
             </div>
         </div>
         <div class="form-group row">
