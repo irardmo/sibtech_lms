@@ -2,7 +2,6 @@ const form = document.getElementById('schedule-form');
 const adminLoadForm = document.getElementById('admin-load-form');
 const tableBody = document.querySelector('#schedule-table tbody');
 const adminLoadTableBody = document.querySelector('#admin-load-table tbody');
-const generatedScheduleTableBody = document.querySelector('#generated-schedule-table tbody');
 const filterButton = document.getElementById('filter-button');
 const schedulePagination = document.getElementById('schedule-pagination');
 const adminLoadPagination = document.getElementById('admin-load-pagination');
@@ -35,34 +34,13 @@ const displaySchedules = (page) => {
             <td>${schedule.lec || ''}</td>
             <td>${schedule.lab || ''}</td>
             <td>
-                <button class="btn btn-primary btn-sm" onclick="editSchedule(${schedule.id})">Edit</button>
-                <button class="btn btn-danger btn-sm" onclick="deleteSchedule(${schedule.id})">Delete</button>
+                <button onclick="editSchedule(${schedule.id})">Edit</button>
+                <button onclick="deleteSchedule(${schedule.id})">Delete</button>
             </td>
         `;
         tableBody.appendChild(row);
     });
     setupSchedulePagination();
-};
-
-const displayGeneratedSchedules = () => {
-    generatedScheduleTableBody.innerHTML = '';
-    schedules.forEach(schedule => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${schedule.teacher}</td>
-            <td>${schedule.room}</td>
-            <td>${schedule.day}</td>
-            <td>${formatTime(schedule.time_start)}</td>
-            <td>${formatTime(schedule.time_end)}</td>
-            <td>${schedule.year}</td>
-            <td>${schedule.block}</td>
-            <td>${schedule.subject}</td>
-            <td>${schedule.course}</td>
-            <td>${schedule.lec || ''}</td>
-            <td>${schedule.lab || ''}</td>
-        `;
-        generatedScheduleTableBody.appendChild(row);
-    });
 };
 
 const setupSchedulePagination = () => {
@@ -101,8 +79,8 @@ const displayAdminLoads = (page) => {
             <td>${load.time}</td>
             <td>${load.hours}</td>
             <td>
-                <button class="btn btn-primary btn-sm" onclick="editAdminLoad(${load.id})">Edit</button>
-                <button class="btn btn-danger btn-sm" onclick="deleteAdminLoad(${load.id})">Delete</button>
+                <button onclick="editAdminLoad(${load.id})">Edit</button>
+                <button onclick="deleteAdminLoad(${load.id})">Delete</button>
             </td>
         `;
         adminLoadTableBody.appendChild(row);
@@ -134,7 +112,6 @@ const fetchSchedules = async (params = {}) => {
     const response = await fetch(`api.php?${query}`);
     schedules = await response.json();
     displaySchedules(1);
-    displayGeneratedSchedules();
 };
 
 const fetchAdminLoad = async () => {
@@ -379,55 +356,15 @@ function openTab(evt, tabName) {
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-    tablinks = document.querySelectorAll(".nav-link");
+    tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(tabName).style.display = "block";
-    if (evt) {
-        evt.currentTarget.classList.add("active");
-    }
+    evt.currentTarget.className += " active";
 }
 
-function addCourse() {
-    const div = document.createElement("div");
-    div.innerHTML = `
-        <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Course Name</label>
-            <div class="col-sm-9">
-                <input type="text" class="form-control" name="course_names[]" placeholder="Course Name" required />
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Number of Sections</label>
-            <div class="col-sm-9">
-                <input type="number" class="form-control" name="sections[]" placeholder="Number of Sections" required />
-            </div>
-        </div>
-    `;
-    document.getElementById("courses").appendChild(div);
-}
-
-function addTeacher() {
-    const div = document.createElement("div");
-    div.innerHTML = `
-        <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Teacher Name</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="teachers[]" placeholder="Teacher Name" required />
-            </div>
-            <div class="col-sm-1">
-                <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.parentElement.remove()">Remove</button>
-            </div>
-        </div>
-    `;
-    document.getElementById("teachers").appendChild(div);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    openTab(null, 'AdminLoad');
-    document.querySelector('.nav-link').classList.add('active');
-});
+document.getElementsByClassName("tablinks")[0].click();
 
 fetchSchedules();
 fetchAdminLoad();
