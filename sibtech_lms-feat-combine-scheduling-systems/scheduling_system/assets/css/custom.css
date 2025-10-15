@@ -1,0 +1,7 @@
+.sidebar .nav .nav-item {
+    text-align: left;
+}
+
+.sidebar .nav .nav-item.active > .nav-link .menu-title {
+    color: green;
+}
