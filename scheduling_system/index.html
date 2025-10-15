@@ -10,6 +10,7 @@
     <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'AdminLoad')">Administrative Load</button>
         <button class="tablinks" onclick="openTab(event, 'TeachingSchedule')">Teaching Schedule</button>
+        <button class="tablinks" onclick="openTab(event, 'AutoGenerate')">Auto-Generate Schedule</button>
     </div>
 
     <div id="AdminLoad" class="tabcontent">
@@ -122,6 +123,32 @@
                 </table>
                 <div id="schedule-pagination" class="pagination"></div>
             </div>
+        </div>
+    </div>
+
+    <div id="AutoGenerate" class="tabcontent">
+        <div class="container-fluid">
+            <h2>Auto-generate Schedule</h2>
+            <form method="POST" action="generate.php">
+                <label>Subject: <input type="text" name="subject" required /></label><br>
+
+                <div id="courses">
+                    <div>
+                        <label>Course Name: <input type="text" name="course_names[]" required /></label>
+                        <label>Number of Sections: <input type="number" name="sections[]" required /></label>
+                    </div>
+                </div>
+                <button type="button" onclick="addCourse()">Add Course</button><br><br>
+
+                <div id="teachers">
+                    <div>
+                        <label>Teacher Name: <input type="text" name="teachers[]" required /></label>
+                    </div>
+                </div>
+                <button type="button" onclick="addTeacher()">Add Teacher</button><br><br>
+
+                <button type="submit">Generate Schedule</button>
+            </form>
         </div>
     </div>
 

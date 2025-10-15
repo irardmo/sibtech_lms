@@ -9,8 +9,8 @@ CREATE TABLE `schedules` (
   `block` varchar(255) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `course` varchar(255) NOT NULL,
-  `lec` varchar(255) DEFAULT NULL,
-  `lab` varchar(255) DEFAULT NULL,
+  `lec` INT DEFAULT NULL,
+  `lab` INT DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

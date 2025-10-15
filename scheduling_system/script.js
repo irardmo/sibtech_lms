@@ -364,6 +364,18 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
+function addCourse() {
+    const div = document.createElement("div");
+    div.innerHTML = '<label>Course Name: <input type="text" name="course_names[]" required /></label> <label>Number of Sections: <input type="number" name="sections[]" required /></label>';
+    document.getElementById("courses").appendChild(div);
+}
+
+function addTeacher() {
+    const div = document.createElement("div");
+    div.innerHTML = '<label>Teacher Name: <input type="text" name="teachers[]" required /></label> <button class="remove-btn" onclick="this.parentElement.remove()">Remove</button>';
+    document.getElementById("teachers").appendChild(div);
+}
+
 document.getElementsByClassName("tablinks")[0].click();
 
 fetchSchedules();
