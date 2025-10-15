@@ -72,12 +72,12 @@ require 'db.php';
 <script>
   function addCourse() {
     const div = document.createElement("div");
-    div.innerHTML = '<label>Course Name: <input type="text" name="course_names[]" required /></label> <label>Number of Sections: <input type="number" name="sections[]" required /></label>';
+    div.innerHTML = '<div><label>Course Name: <input type="text" name="course_names[]" required /></label> <label>Number of Sections: <input type="number" name="sections[]" required /></label> <button class="remove-btn" onclick="this.parentElement.parentElement.remove()">Remove</button></div>';
     document.getElementById("courses").appendChild(div);
   }
   function addTeacher() {
     const div = document.createElement("div");
-    div.innerHTML = '<label>Teacher Name: <input type="text" name="teachers[]" required /></label> <button class="remove-btn" onclick="this.parentElement.remove()">Remove</button>';
+    div.innerHTML = '<div><label>Teacher Name: <input type="text" name="teachers[]" required /></label> <button class="remove-btn" onclick="this.parentElement.parentElement.remove()">Remove</button></div>';
     document.getElementById("teachers").appendChild(div);
   }
 </script>
