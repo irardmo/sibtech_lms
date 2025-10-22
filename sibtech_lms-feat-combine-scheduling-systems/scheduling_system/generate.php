@@ -18,8 +18,8 @@ foreach ($teachers as $teacher) {
         $teacher,
         $rooms[$id % count($rooms)],
         $days[$id % count($days)],
-        sprintf('%02d:00 AM', 7 + ($id % 5)),
-        sprintf('%02d:00 AM', 8 + ($id % 5)),
+        sprintf('%02d:00:00', 7 + ($id % 5)),
+        sprintf('%02d:00:00', 8 + ($id % 5)),
         '1st Year',
         chr(65 + ($id % 3)),
         $subject,
@@ -31,6 +31,6 @@ foreach ($teachers as $teacher) {
     }
   }
 }
-header("Location: index.php");
+header("Location: index.html");
 exit;
 ?>
