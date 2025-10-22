@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluation Form - Scheduling System</title>
+    <title>Upload Documents - Scheduling System</title>
     <link rel="stylesheet" href="assets/vendors/simple-line-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custom.css">
@@ -43,21 +43,9 @@
                     <span class="nav-link">Dashboard</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html" onclick="openTab(event, 'AdminLoad')">
+                    <a class="nav-link" href="../index.html">
                         <i class="icon-briefcase menu-icon"></i>
-                        <span class="menu-title">Administrative Load</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html" onclick="openTab(event, 'TeachingSchedule')">
-                        <i class="icon-calendar menu-icon"></i>
-                        <span class="menu-title">Teaching Schedule</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html" onclick="openTab(event, 'AutoGenerate')">
-                        <i class="icon-magic-wand menu-icon"></i>
-                        <span class="menu-title">Auto-Generate</span>
+                        <span class="menu-title">Scheduling</span>
                     </a>
                 </li>
                 <li class="nav-item nav-category">
@@ -69,7 +57,7 @@
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="hr_evaluation_form.html">
                         <i class="icon-note menu-icon"></i>
                         <span class="menu-title">Evaluation Form</span>
@@ -81,7 +69,7 @@
                         <span class="menu-title">Manage Evaluations</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="hr_upload_documents.html">
                         <i class="icon-docs menu-icon"></i>
                         <span class="menu-title">Upload Documents</span>
@@ -92,59 +80,52 @@
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="page-header">
-                    <h3 class="page-title">Employee Evaluation Form</h3>
+                    <h3 class="page-title">Upload Employee Documents</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-12 grid-margin">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Evaluation Details</h4>
+                                <h4 class="card-title">Employee Documents</h4>
                                 <form class="forms-sample">
                                     <div class="form-group row">
-                                        <label for="employeeName" class="col-sm-3 col-form-label">Employee Name</label>
+                                        <label for="employeeNameUpload" class="col-sm-3 col-form-label">Employee Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="employeeName" placeholder="Employee Name">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="employeeId" class="col-sm-3 col-form-label">Employee ID</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="employeeId" placeholder="Employee ID">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="evaluationDate" class="col-sm-3 col-form-label">Evaluation Date</label>
-                                        <div class="col-sm-9">
-                                            <input type="date" class="form-control" id="evaluationDate">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="jobKnowledge" class="col-sm-3 col-form-label">Job Knowledge</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" id="jobKnowledge">
-                                                <option>Excellent</option>
-                                                <option>Good</option>
-                                                <option>Average</option>
-                                                <option>Fair</option>
-                                                <option>Poor</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="workQuality" class="col-sm-3 col-form-label">Work Quality</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" id="workQuality">
-                                                <option>Excellent</option>
-                                                <option>Good</option>
-                                                <option>Average</option>
-                                                <option>Fair</option>
-                                                <option>Poor</option>
-                                            </select>
+                                            <input type="text" class="form-control" id="employeeNameUpload" placeholder="Employee Name">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="comments">Comments</label>
-                                        <textarea class="form-control" id="comments" rows="4"></textarea>
+                                        <label>Requirements Checklist</label>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input"> Police Clearance
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input"> Good Moral Certificate
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input"> NBI Clearance
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input"> SSS ID
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>File upload</label>
+                                        <input type="file" name="img[]" class="file-upload-default">
+                                        <div class="input-group col-xs-12">
+                                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                                            <span class="input-group-append">
+                                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                                            </span>
+                                        </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                 </form>
