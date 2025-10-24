@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Evaluations - Scheduling System</title>
+    <title>Payments - Scheduling System</title>
     <link rel="stylesheet" href="../assets/vendors/simple-line-icons.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/custom.css">
@@ -35,39 +35,53 @@
                             <img class="img-xs rounded-circle" src="../logo.png" alt="profile image">
                         </div>
                         <div class="text-wrapper">
-                            <p class="profile-name">Admin</p>
-                            <p class="designation">Administrator</p>
+                            <p class="profile-name">Student Name</p>
                         </div>
                     </a>
                 </li>
                 <li class="nav-item nav-category">
                     <span class="nav-link">Dashboard</span>
                 </li>
-                <li class="nav-item nav-category">
-                    <span class="nav-link">HR</span>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="dashboard.php">
                         <i class="icon-screen-desktop menu-icon"></i>
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="hr_evaluation_form.html">
-                        <i class="icon-note menu-icon"></i>
-                        <span class="menu-title">Evaluation Form</span>
-                    </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="hr_manage_evaluations.html">
-                        <i class="icon-layers menu-icon"></i>
-                        <span class="menu-title">Manage Evaluations</span>
+                    <a class="nav-link" href="view_grades.php">
+                        <i class="icon-book-open menu-icon"></i>
+                        <span class="menu-title">View Grades</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="hr_upload_documents.html">
+                    <a class="nav-link" href="attendance.php">
+                        <i class="icon-check menu-icon"></i>
+                        <span class="menu-title">Attendance</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="payments.php">
+                        <i class="icon-wallet menu-icon"></i>
+                        <span class="menu-title">Payments</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="request_documents.php">
                         <i class="icon-docs menu-icon"></i>
-                        <span class="menu-title">Upload Documents</span>
+                        <span class="menu-title">Request Documents</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="evaluation.php">
+                        <i class="icon-note menu-icon"></i>
+                        <span class="menu-title">Evaluation</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="schedule.php">
+                        <i class="icon-calendar menu-icon"></i>
+                        <span class="menu-title">Schedule</span>
                     </a>
                 </li>
             </ul>
@@ -75,26 +89,14 @@
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="page-header">
-                    <h3 class="page-title">Manage Employee Evaluations</h3>
+                    <h3 class="page-title">Payments</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-12 grid-margin">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Completed Evaluations</h4>
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Employee Name</th>
-                                            <th>Employee ID</th>
-                                            <th>Evaluation Date</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Evaluation records will be populated here -->
-                                    </tbody>
-                                </table>
+                                <h4 class="card-title">Your Payments</h4>
+                                <p class="card-description">This page is under construction.</p>
                             </div>
                         </div>
                     </div>
